@@ -19,7 +19,7 @@ Interactive prompt using serial terminal
 
 Blink LED on ESP8266 chip
 
-Upload script using ESPlorer
+Upload script using _ampy_
 
 File system
 
