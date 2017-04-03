@@ -1,15 +1,15 @@
 # Micropython Tutorial for Wemos D1 Mini
 
-All examples are for Wemos D1 Mini, [WS2812B RGB Shield (NeoPixel)] (https://www.wemos.cc/product/ws2812b-rgb-shield.html) and [DHT Pro Shield] (https://www.wemos.cc/product/dht-pro-shield.html).
+All examples are for Wemos D1 Mini, [WS2812B RGB Shield (NeoPixel)](https://www.wemos.cc/product/ws2812b-rgb-shield.html) and [DHT Pro Shield](https://www.wemos.cc/product/dht-pro-shield.html).
 
 # Lessons
 ## Computer setup
 
 Connect to internet
 
-Install [serial terminal] (http://www.putty.org/) for Windows
+Install [serial terminal](http://www.putty.org/) for Windows
 
-Install [ampy] (https://learn.adafruit.com/micropython-basics-load-files-and-run-code/overview)
+Install [ampy](https://learn.adafruit.com/micropython-basics-load-files-and-run-code/overview)
 
 Install drivers for CH340 (Mac, Windows < 8.1)
 
@@ -30,7 +30,7 @@ pin.value(1);
 
 #### Upload script using _ampy_
 
-Scrip name: [101.py] (main.py)
+Scrip name: [101.py](main.py)
 
 Close interactive prompt
 
