@@ -30,7 +30,7 @@ pin.value(1);
 
 #### Upload script using _ampy_
 
-Scrip name: [101.py](main.py)
+Scrip name: [101.py](101.py)
 
 Close interactive prompt
 
@@ -40,7 +40,7 @@ ampy --port COM14 run 101.py
 
 ### File system
 
-[Documentation ampy] (https://learn.adafruit.com/micropython-basics-load-files-and-run-code/file-operations)
+[Documentation ampy](https://learn.adafruit.com/micropython-basics-load-files-and-run-code/file-operations)
 
 Startup scripts
 * boot.py
@@ -80,7 +80,7 @@ Download website
 
 ## ThingSpeak
 
-Create [ThingSpeak Account] (https://thingspeak.com/)
+Create [ThingSpeak Account](https://thingspeak.com/)
 
 Create Channel
 
