@@ -15,13 +15,36 @@ Install drivers for CH340 (Mac, Windows < 8.1)
 
 ## First script
 
-Interactive prompt using serial terminal
+### Interactive prompt using serial terminal
 
-Blink LED on ESP8266 chip
+Baudrate: 115200
 
-Upload script using _ampy_
+Control LED on ESP8266 chip. LED is connected on pin 2 to VCC. You control ground (0 - on, 1 - off).
 
-File system
+```
+import machine
+pin = machine.Pin(2, machine.Pin.OUT)
+pin.value(0);
+pin.value(1);
+```
+
+#### Upload script using _ampy_
+
+Scrip name: [101.py] (main.py)
+
+Close interactive prompt
+
+```
+ampy --port COM14 run 101.py
+```
+
+### File system
+
+[Documentation ampy] (https://learn.adafruit.com/micropython-basics-load-files-and-run-code/file-operations)
+
+Startup scripts
+* boot.py
+* main.py - runs automatically after start
 
 Startup scripts
 

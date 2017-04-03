@@ -6,23 +6,20 @@ except:
     import socket
 
 import machine
+import dht
 
 
 CONTENT = b"""\
 HTTP/1.0 200 OK
 
-Hello #%d from MicroPython!
+<h1>Micropython weather station</h1>
+<p>Temperature: {0} °C</p>
+<p>Humidity: {1}%</p>
 """
-def getCommand(response):
-    response = response.decode("utf-8")
-    start = response.find(" ")
-    end = response.find(" ", start+1)
-    
-    return(response[start+1:end])
+
+d = dht.DHT22(machine.Pin(2))
 
 def main():
-    led = machine.Pin(2, machine.Pin.OUT)
-    led.value(1)
     s = socket.socket()
     ai = socket.getaddrinfo("0.0.0.0", 8080)
     addr = ai[0][-1]
@@ -39,16 +36,15 @@ def main():
         client_s = res[0]
         client_addr = res[1]
         req = client_s.recv(128)
-        cmd = getCommand(req)
-        
-        print(cmd)
 
-        if (cmd == "/on"):
-            led.value(0)
-        elif (cmd == "/off"):
-            led.value(1)
-        
-        client_s.send(CONTENT % counter)
+        print(req)
+
+        d.measure()
+
+        t = d.temperature()
+        h = d.humidity()
+
+        client_s.send(CONTENT.format(t, h))
         client_s.close()
         counter += 1
         print()
