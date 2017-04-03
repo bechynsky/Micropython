@@ -2,16 +2,25 @@
 
 All examples are for Wemos D1 Mini, [WS2812B RGB Shield (NeoPixel)](https://www.wemos.cc/product/ws2812b-rgb-shield.html) and [DHT Pro Shield](https://www.wemos.cc/product/dht-pro-shield.html).
 
+# Student prerequisities
+
+* Python knowledge
+* Micro USB cable
+* Python 3 installed
+* Python IDE installed
+  * https://code.visualstudio.com/
+* Git client (optional)
+
 # Lessons
+
 ## Computer setup
 
-Connect to internet
-
-Install [serial terminal](http://www.putty.org/) for Windows
-
-Install [ampy](https://learn.adafruit.com/micropython-basics-load-files-and-run-code/overview)
-
-Install drivers for CH340 (Mac, Windows < 8.1)
+* Connect to internet
+* Install serial terminal 
+  * Windows: [Putty](http://www.putty.org/)
+* Install [ampy](https://learn.adafruit.com/micropython-basics-load-files-and-run-code/overview)
+  * Add _ampy_ to PARH
+* Install drivers for CH340 (Mac, Windows < 8.1)
 
 ## First script
 
