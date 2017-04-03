@@ -55,7 +55,6 @@ Startup scripts
 * boot.py
 * main.py - runs automatically after start
 
-Startup scripts
 
 ## DHT22 (DHT11) and RGB LED
 
@@ -63,9 +62,11 @@ Using hardware drivers
 
 How it works with pins
 
-Read temperature and humidity
+Read temperature and humidity [dht.py](dht.py)
 
-Control RGB LED
+What is it Neopixel LED and how it works
+
+Control Neopixel RGB LED [neopixel.py](neopixel.py)
 
 Create simple thermometer using RGB LED and DHT11 - temperature is showed using colors (for example red hot, blue cold)
 
