@@ -43,8 +43,16 @@ Scrip name: [101.py](101.py)
 
 Close interactive prompt
 
+Example for Windows. Use your serial port number.
+
 ```
 ampy --port COM14 run 101.py
+```
+
+Example for Linux and Mac. Do not forget to use full path to your serial port.
+
+```
+ampy --port /dev/ttyUSB0 run 101.py
 ```
 
 ### File system
@@ -55,6 +63,13 @@ Startup scripts
 * boot.py
 * main.py - runs automatically after start
 
+```
+ampy --port COM4 put main.py
+```
+
+```
+ampy --port /dev/ttyUSB0 put main.py
+```
 
 ## DHT22 (DHT11) and RGB LED
 
