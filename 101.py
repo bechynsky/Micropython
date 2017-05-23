@@ -9,8 +9,8 @@ pin = machine.Pin(2, machine.Pin.OUT)
 
 while True:
     # Set high voltage on pin
-    pin.value(1);
+    pin.value(1)
     time.sleep(0.5)
     # Set low voltage on pin
-    pin.value(0);
+    pin.value(0)
     time.sleep(0.5)
