@@ -7,7 +7,7 @@ import machine
 # Wemos D1 Mini DHT Shield is on pin 2 (D4)
 # Use ESP8266 GPIO pin numbers
 # https://www.wemos.cc/product/d1-mini-pro.html
-d = dht.DHT22(machine.Pin(2))
+d = dht.DHT11(machine.Pin(2))
 # Ask for data
 d.measure()
 
