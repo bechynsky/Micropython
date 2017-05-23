@@ -18,6 +18,7 @@ All examples are for Wemos D1 Mini, [WS2812B RGB Shield (NeoPixel)](https://www.
 * Connect to internet
 * Install serial terminal 
   * Windows: [Putty](http://www.putty.org/)
+  * Linux, Mac: Use _screen_ tool 
 * Install [ampy](https://learn.adafruit.com/micropython-basics-load-files-and-run-code/overview)
   * Add _ampy_ to PARH
 * Install drivers for CH340 (Mac, Windows < 8.1)
