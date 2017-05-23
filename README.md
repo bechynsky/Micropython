@@ -19,7 +19,7 @@ All examples are for Wemos D1 Mini, [WS2812B RGB Shield (NeoPixel)](https://www.
 * Install serial terminal 
   * Windows: [Putty](http://www.putty.org/)
 * Install [ampy](https://learn.adafruit.com/micropython-basics-load-files-and-run-code/overview)
-  * Add _ampy_ to PARH
+  * Add _ampy_ to PATH
 * Install drivers for CH340 (Mac, Windows < 8.1)
 
 ## First script
@@ -33,8 +33,8 @@ Control LED on ESP8266 chip. LED is connected on pin 2 to VCC. You control groun
 ```
 import machine
 pin = machine.Pin(2, machine.Pin.OUT)
-pin.value(0);
-pin.value(1);
+pin.value(0)
+pin.value(1)
 ```
 
 #### Upload script using _ampy_
