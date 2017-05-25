@@ -38,7 +38,7 @@ def main():
         res = s.accept()
         client_s = res[0]
         client_addr = res[1]
-        req = client_s.recv(128)
+        req = client_s.recv(1024)
         cmd = getCommand(req)
         
         print(cmd)

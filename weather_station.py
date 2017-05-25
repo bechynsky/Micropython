@@ -17,24 +17,24 @@ HTTP/1.0 200 OK
 # Wemos D1 Mini DHT Shield is on pin 2 (D4)
 # Use ESP8266 GPIO pin numbers
 # https://www.wemos.cc/product/d1-mini-pro.html
-d = dht.DHT11(machine.Pin(2))
+d = dht.DHT22(machine.Pin(2))
 
 def main():
     s = socket.socket()
-    addr = socket.getaddrinfo("0.0.0.0", 80)[0][-1]
+    addr = socket.getaddrinfo("0.0.0.0", 8080)[0][-1]
 
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
     s.bind(addr)
     s.listen(1)
-    print("Listening, connect your browser to http://<this_host>/")
+    print("Listening, connect your browser to http://<this_host>:8080/")
 
     counter = 0
     while True:
         res = s.accept()
         client_s = res[0]
         client_addr = res[1]
-        req = client_s.recv(128)
+        req = client_s.recv(1024)
 
         print(req)
 
