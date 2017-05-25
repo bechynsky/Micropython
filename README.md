@@ -100,9 +100,9 @@ SSL
 
 Explain Wi-Fi modes - access point vs. client
 
-Connect to local Wi-Fi
+Connect to local Wi-Fi [wifi_connect.py](wifi_connect.py)
 
-Download website
+Download website [http_test.py](http_test.py) _Connect to Wi-Fi first!_
 
 ## ThingSpeak
 
