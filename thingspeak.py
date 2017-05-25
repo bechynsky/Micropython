@@ -8,7 +8,7 @@ API_KEY = ""
 DHT_PIN = 2
 HOST = "api.thingspeak.com"
 
-d = dht.DHT22(machine.Pin(DHT_PIN))
+d = dht.DHT11(machine.Pin(DHT_PIN))
 
 def main(use_stream=True):
     while True:
