@@ -17,7 +17,7 @@ HTTP/1.0 200 OK
 <p>Humidity: {1}%</p>
 """
 
-d = dht.DHT22(machine.Pin(2))
+d = dht.DHT11(machine.Pin(2))
 
 def main():
     s = socket.socket()
