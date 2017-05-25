@@ -120,3 +120,25 @@ Create simple web server showing current temperature
 
 Crete web server controlling RGB light
 
+## Firmware update
+
+[Firmware for ESP8266](http://micropython.org/download#esp8266)
+
+Windows: [NodeMCU Flasher](https://github.com/nodemcu/nodemcu-flasher)
+
+### esptool.py
+
+[Documentation and source code](https://github.com/espressif/esptool)
+
+#### Instalation
+
+```
+pip install esptool
+```
+
+#### Example how to use it
+
+```
+python c:\Python34\Scripts\esptool.py --port COM7 write_flash 0x000000 esp8266-20170108-v1.8.7.bin
+```
+
