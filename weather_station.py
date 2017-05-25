@@ -1,9 +1,6 @@
 # Do not use this code in real projects! Read
 # http_server_simplistic_commented.py for details.
-try:
-    import usocket as socket
-except:
-    import socket
+import socket
 
 import machine
 import dht
@@ -17,18 +14,20 @@ HTTP/1.0 200 OK
 <p>Humidity: {1}%</p>
 """
 
+# Wemos D1 Mini DHT Shield is on pin 2 (D4)
+# Use ESP8266 GPIO pin numbers
+# https://www.wemos.cc/product/d1-mini-pro.html
 d = dht.DHT11(machine.Pin(2))
 
 def main():
     s = socket.socket()
-    ai = socket.getaddrinfo("0.0.0.0", 8080)
-    addr = ai[0][-1]
+    addr = socket.getaddrinfo("0.0.0.0", 80)[0][-1]
 
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
     s.bind(addr)
-    s.listen(5)
-    print("Listening, connect your browser to http://<this_host>:8080/")
+    s.listen(1)
+    print("Listening, connect your browser to http://<this_host>/")
 
     counter = 0
     while True:

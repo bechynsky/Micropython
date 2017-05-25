@@ -114,7 +114,17 @@ Send data from DHT11 to channel
 
 ## Server
 
-How to use Access point mode
+### How to use Access point mode
+
+Run thi code to find _mac address_ of your board.
+
+```
+import network
+
+wlan = network.WLAN(network.STA_IF) # create station interface
+wlan.active(True)       # activate the interface
+wlan.config('mac')   
+```
 
 Create simple web server showing current temperature
 
