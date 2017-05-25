@@ -116,7 +116,7 @@ Send data from DHT11 to channel
 
 ### How to use Access point mode
 
-Run thi code to find _mac address_ of your board.
+Run this code to find _mac address_ of your board.
 
 ```
 import network
@@ -125,6 +125,8 @@ wlan = network.WLAN(network.STA_IF) # create station interface
 wlan.active(True)       # activate the interface
 wlan.config('mac')   
 ```
+
+Open list of available Wi-Fi and connect to Wi-Fi named _MicroPython-xxxxxx_ where _xxxxxx_ is part of MAC address. Password is _micropythoN_. IP addres of board is _192.168.4.1_.
 
 Create simple web server showing current temperature
 
