@@ -123,7 +123,7 @@ import network
 
 wlan = network.WLAN(network.STA_IF) # create station interface
 wlan.active(True)       # activate the interface
-print(":".join(map(lambda x: "%x" % x, wlan.config('mac'))))
+print(":".join(map(lambda x: "%02x" % x, wlan.config('mac'))))
 ```
 
 Open list of available Wi-Fi and connect to Wi-Fi named _MicroPython-xxxxxx_ where _xxxxxx_ is part of MAC address. Password is _micropythoN_. IP addres of board is _192.168.4.1_.
