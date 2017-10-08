@@ -151,6 +151,8 @@ pip install esptool
 #### Example how to use it
 
 ```
-python c:\Python34\Scripts\esptool.py --port COM7 write_flash 0x000000 esp8266-20170108-v1.8.7.bin
+python c:\Python34\Scripts\esptool.py --port COM7 erase_flash
+
+python c:\Python34\Scripts\esptool.py --port COM7 write_flash -fm dio 0x000000 esp8266-20170823-v1.9.2.bin
 ```
 
