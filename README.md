@@ -22,14 +22,43 @@ All examples are for Wemos D1 Mini, [WS2812B RGB Shield (NeoPixel)](https://www.
 * Install [ampy](https://learn.adafruit.com/micropython-basics-load-files-and-run-code/overview), [install instruction](https://github.com/adafruit/ampy)
   * Add _ampy_ to PATH
 * Install drivers for CH340 (Mac, Windows < 8.1)
+* Add user to _dioultout_ group on Linux
+
+## Firmware update
+
+First you need to upload Micropython to ESP8266 chip.
+
+[Firmware for ESP8266](http://micropython.org/download#esp8266)
+
+Windows: [NodeMCU Flasher](https://github.com/nodemcu/nodemcu-flasher)
+
+### esptool.py
+
+[Documentation and source code](https://github.com/espressif/esptool)
+
+#### Instalation
+
+```
+pip install esptool
+```
+
+#### Example how to use it
+
+```
+python c:\Python34\Scripts\esptool.py --port COM7 erase_flash
+
+python c:\Python34\Scripts\esptool.py --port COM7 write_flash -fm dio 0x000000 esp8266-20170823-v1.9.2.bin
+```
 
 ## First script
 
 ### Interactive prompt using serial terminal
 
-Baudrate: 115200
+Connect device using USB cable to your computer. Device will present as serial port. On Windows it will be _COMx_. On Linux and Mac it will be _/dev/ttyUSBx_. _x_ is number.
 
-Control LED on ESP8266 chip. LED is connected on pin 2 to VCC. You control ground (0 - on, 1 - off).
+Open your serial communication appliction and connect to right serial port using baudrate (speed) _115200_. After you connect you will probably need to press enter to see promt _>>>_. No it works es Python interactive console on standard computer.
+
+Control LED on ESP8266 chip. LED is connected on pin 2 to VCC. You control ground (0 - on, 1 - off). LED is located close antena.
 
 ```
 import machine
@@ -42,7 +71,7 @@ pin.value(1)
 
 Scrip name: [101.py](101.py)
 
-Close interactive prompt
+Close interactive prompt.
 
 Example for Windows. Use your serial port number.
 
@@ -128,31 +157,10 @@ print(":".join(map(lambda x: "%02x" % x, wlan.config('mac'))))
 
 Open list of available Wi-Fi and connect to Wi-Fi named _MicroPython-xxxxxx_ where _xxxxxx_ is part of MAC address. Password is _micropythoN_. IP addres of board is _192.168.4.1_.
 
-Create simple web server showing current temperature
+### Create webserver
 
-Crete web server controlling RGB light
+__Important:__ There is bug in _ampy_ tool. It is recommended to upload code as _main.py_ using _put_ command instaed of to try run it using _run_ command. Do not forget restart ESP8266.
 
-## Firmware update
+Create web server showing current temperature [weather_station.py](weather_station.py).
 
-[Firmware for ESP8266](http://micropython.org/download#esp8266)
-
-Windows: [NodeMCU Flasher](https://github.com/nodemcu/nodemcu-flasher)
-
-### esptool.py
-
-[Documentation and source code](https://github.com/espressif/esptool)
-
-#### Instalation
-
-```
-pip install esptool
-```
-
-#### Example how to use it
-
-```
-python c:\Python34\Scripts\esptool.py --port COM7 erase_flash
-
-python c:\Python34\Scripts\esptool.py --port COM7 write_flash -fm dio 0x000000 esp8266-20170823-v1.9.2.bin
-```
-
+Crete web server controlling on board LED [server_led_control.py](server_led_control.py).
