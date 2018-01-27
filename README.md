@@ -7,6 +7,7 @@ All examples are for Wemos D1 Mini, [WS2812B RGB Shield (NeoPixel)](https://www.
 * Python knowledge
 * Micro USB cable
 * Python 3 installed
+  * If you have Python 2 installed you can get into problems mixing Python versions. You must use Python 3. Check what is default version of Python on your system.
 * Python IDE installed
   * https://code.visualstudio.com/
 * Git client (optional)
@@ -44,10 +45,14 @@ pip install esptool
 
 #### Example how to use it
 
-```
-python c:\Python34\Scripts\esptool.py --port COM7 erase_flash
+It is important to erase flash first.
 
-python c:\Python34\Scripts\esptool.py --port COM7 write_flash -fm dio 0x000000 esp8266-20170823-v1.9.2.bin
+_Windows_
+
+```
+esptool.py.exe --port COM7 erase_flash
+
+esptool.py.exe --port COM7 write_flash -fm dio 0x000000 esp8266-20170823-v1.9.2.bin
 ```
 
 ## First script
