@@ -16,14 +16,27 @@ All examples are for Wemos D1 Mini, [WS2812B RGB Shield (NeoPixel)](https://www.
 
 ## Computer setup
 
-* Connect to internet
+### General
+
+* Internet connection
 * Install serial terminal 
   * Windows: [Putty](http://www.putty.org/)
-  * Linux, Mac: Use _screen_ tool 
+  * Linux, Mac: Use _screen_ or _minicom_ tool 
 * Install [ampy](https://learn.adafruit.com/micropython-basics-load-files-and-run-code/overview), [install instruction](https://github.com/adafruit/ampy)
   * Add _ampy_ to PATH
 * Install drivers for CH340 (Mac, Windows < 8.1)
-* Add user to _dioultout_ group on Linux
+
+### Linux
+
+* add your user to dialout user group ( usually ```sudo usermod -a -G dialout yourUsername``` )
+* log out/log in to make the change applied to your user
+* to make sure that you'll be using python3 environment for workshop, clone the repository and create a python3 virtualenv
+  * Clone the repo: ```git clone https://github.com/bechynsky/Micropython.git```
+  * Go to directory: ```cd Micropython```
+  * Create python3 virtualenv: ```python3 -m venv <absolutePath>/Micropython/venv```
+  * Activate the virtualenv: ```source ./venv/bin/activate```
+  * Update pip and setuptools: ```pip install pip setuptools --upgrade```
+  * Install python tooling for workshop: ```pip install esptool adafruit-ampy```
 
 ## Firmware update
 
@@ -37,7 +50,7 @@ Windows: [NodeMCU Flasher](https://github.com/nodemcu/nodemcu-flasher)
 
 [Documentation and source code](https://github.com/espressif/esptool)
 
-#### Instalation
+#### Instalation (if it's not already installed)
 
 ```
 pip install esptool
@@ -55,6 +68,13 @@ esptool.py.exe --port COM7 erase_flash
 esptool.py.exe --port COM7 write_flash -fm dio 0x000000 esp8266-20170823-v1.9.2.bin
 ```
 
+_Linux_
+```
+esptool.py -p /dev/ttyUSB0 erase_flash
+
+esptool.py -p /dev/ttyUSB0 write_flash -fm dio 0x000000 <downloaded ESP8266 bin file>
+```
+
 ## First script
 
 ### Interactive prompt using serial terminal
@@ -62,6 +82,8 @@ esptool.py.exe --port COM7 write_flash -fm dio 0x000000 esp8266-20170823-v1.9.2.
 Connect device using USB cable to your computer. Device will present as serial port. On Windows it will be _COMx_. On Linux and Mac it will be _/dev/ttyUSBx_. _x_ is number.
 
 Open your serial communication appliction and connect to right serial port using baudrate (speed) _115200_. After you connect you will probably need to press enter to see promt _>>>_. No it works es Python interactive console on standard computer.
+
+_Linux_ - use for example ```minicom -s``` and set the correct USB serial port path, then exit (not exit the minicom)
 
 Control LED on ESP8266 chip. LED is connected on pin 2 to VCC. You control ground (0 - on, 1 - off). LED is located close antena.
 
