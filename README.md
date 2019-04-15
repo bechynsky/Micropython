@@ -8,11 +8,14 @@ All examples are for Wemos D1 Mini, [WS2812B RGB Shield (NeoPixel)](https://www.
 * Micro USB cable
 * Python 3 installed
   * If you have Python 2 installed you can get into problems mixing Python versions. You must use Python 3. Check what is default version of Python on your system.
-* Python IDE installed
+* Have python added in local path
+* Code editor installed:
   * https://code.visualstudio.com/
+*Python development extensions for code editor installed :
+  * https://marketplace.visualstudio.com/items?itemName=ms-python.python
 * Git client (optional)
 
-# Lessons
+# Lessons:
 
 ## Computer setup
 
